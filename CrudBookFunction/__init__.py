@@ -10,12 +10,12 @@ import pyodbc
 import azure.functions as func
 
 # Configure Database URI: 
-params = urllib.parse.quote_plus("Driver={ODBC Driver 17 for SQL Server};Server=tcp:datagrokr.database.windows.net,1433;Database=de-intern-apr;Uid=;Pwd=;Encrypt=yes;TrustServerCertificate=no;Connection Timeout=30;")
+params = urllib.parse.quote_plus("Driver={ODBC Driver 17 for SQL Server};Server=,1433;Database=de-intern-apr;Uid=;Pwd=;Encrypt=yes;TrustServerCertificate=no;Connection Timeout=30;")
 
 
 # initialization
 app = Flask(__name__)
-app.config['SECRET_KEY'] = 'keythatissecret'
+app.config['SECRET_KEY'] = environ.get('SECRET_KEY')
 app.config['SQLALCHEMY_DATABASE_URI'] = "mssql+pyodbc:///?odbc_connect=%s" % params
 app.config['SQLALCHEMY_COMMIT_ON_TEARDOWN'] = True
 
