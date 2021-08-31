@@ -10,7 +10,7 @@ import pyodbc
 import azure.functions as func
 
 # Configure Database URI: 
-params = urllib.parse.quote_plus("Driver={ODBC Driver 17 for SQL Server};Server=tcp:datagrokr.database.windows.net,1433;Database=de-intern-apr;Uid=dgadmin;Pwd=dingding@ding1;Encrypt=yes;TrustServerCertificate=no;Connection Timeout=30;")
+params = urllib.parse.quote_plus("Driver={ODBC Driver 17 for SQL Server};Server=tcp:datagrokr.database.windows.net,1433;Database=de-intern-apr;Uid=dgadmin;Pwd=;Encrypt=yes;TrustServerCertificate=no;Connection Timeout=30;")
 
 
 # initialization
